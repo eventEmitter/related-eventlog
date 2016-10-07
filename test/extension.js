@@ -50,7 +50,7 @@
 
             this.timeout(5000);
             orm = new ORM(config);
-            orm.load().then(() => done()).catch(done);
+            done();
         });
     });
 
@@ -59,18 +59,17 @@
     describe('The EventLog Extension', function() {
 
         it('should not crash when instatiated', function() {
-            db = orm.related_eventlog_test;
             extension = new EventLog();
         });
 
 
         it('should not crash when injected into the orm', function(done) {
             orm.use(extension);
-            orm.load(done);
+            orm.load().then(() => done()).catch(done);
         });
 
 
-        it('removing old data', function(done) {
+        it('removing old data', function(done) { log(orm);
             db = orm.related_eventlog_test;
             db.eventLogGroup_eventLogEntity().delete().then(() => {
                 return db.eventLogGroup().delete();
