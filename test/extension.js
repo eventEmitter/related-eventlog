@@ -35,10 +35,18 @@
                 config = require('../config.js').db
             } catch(e) {
                 config = [{
-                      type: 'postgres'
-                    , schema: 'related_eventlog_test'
-                    , database  : 'test'
-                    , hosts: [{}]
+                      type              : 'postgres'
+                    , database          : 'test'
+                    , schema            : 'related_eventlog_test'
+                    , hosts: [
+                        {
+                              host      : '127.0.0.1'
+                            , username  : 'postgres'
+                            , password  : ''
+                            , port      : 5432
+                            , mode      : 'readwrite'
+                        }
+                    ]
                 }];
             }
 
