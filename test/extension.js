@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    //process.argv.push('--related-sql');
+    process.argv.push('--related-sql');
+    process.argv.push('--dev-orm');
 
 
     const log           = require('ee-log');
@@ -27,8 +28,8 @@
 
 
 
-    describe('Preparations', function(){
-        it('load the orm', function(done){
+    describe('Preparations', function() {
+        it('load the orm', function() {
             var config;
 
             try {
@@ -48,9 +49,7 @@
                 }];
             }
 
-            this.timeout(5000);
             orm = new ORM(config);
-            done();
         });
     });
 
@@ -69,7 +68,7 @@
         });
 
 
-        it('removing old data', function(done) { log(orm);
+        it('removing old data', function(done) {
             db = orm.related_eventlog_test;
             db.eventLogGroup_eventLogEntity().delete().then(() => {
                 return db.eventLogGroup().delete();
