@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-    process.argv.push('--related-sql');
-    process.argv.push('--dev-orm');
+    //process.argv.push('--related-sql');
+    //process.argv.push('--dev-orm');
 
 
     const log           = require('ee-log');
