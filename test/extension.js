@@ -38,15 +38,13 @@
                       type              : 'postgres'
                     , database          : 'test'
                     , schema            : 'related_eventlog_test'
-                    , hosts: [
-                        {
-                              host      : '127.0.0.1'
-                            , username  : 'postgres'
-                            , password  : ''
-                            , port      : 5432
-                            , mode      : 'readwrite'
-                        }
-                    ]
+                    , hosts: [{
+                          host      : 'localhost'
+                        , username  : 'postgres'
+                        , password  : ''
+                        , maxConnections: 20
+                        , pools     : ['write', 'read', 'master']
+                    }]
                 }];
             }
 
@@ -56,17 +54,6 @@
         });
     });
 
-
-    var expect = function(val, cb){
-        return function(err, result){
-            try {
-                assert.equal(JSON.stringify(result), val);
-            } catch (err) {
-                return cb(err);
-            }
-            cb();
-        }
-    };
 
 
     describe('The EventLog Extension', function() {
