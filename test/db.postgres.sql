@@ -63,11 +63,11 @@ CREATE TABLE "related_eventlog_test"."eventLog" (
       "id"                      bigserial NOT NULL
     , "id_eventLogAction"       int not null
     , "id_eventLogEntity"       int not null
-    , "affectedId"              int
-    , "affectedSecondaryId"     int
+    , "affectedId"              bigint
+    , "affectedSecondaryId"     bigint
     , "affectedStringId"        varchar(200)
     , "userId"                  int
-    , "data"          json
+    , "data"                    json
     , "created"                 timestamp without time zone not null default now()
     , "updated"                 timestamp without time zone not null default now()
     , "deleted"                 timestamp without time zone

@@ -1,7 +1,7 @@
 {
     "name": "related-eventlog",
     "description": "logs inserts, updates and deletes on entites and relations that need to be monitored",
-    "version": "1.0.1",
+    "version": "1.01.0",
     "homepage": "https://github.com/eventEmitter/related-eventlog",
     "author": "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)",
     "license": "MIT",
