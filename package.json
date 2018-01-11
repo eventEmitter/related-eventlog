@@ -1,37 +1,40 @@
 {
-      "name"                        : "related-eventlog"
-    , "description"                 : "logs inserts, updates and deletes on entites and relations that need to be monitored"
-    , "version"                     : "1.0.0"
-    , "homepage"                    : "https://github.com/eventEmitter/related-eventlog"
-    , "author"                      : "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)"
-    , "license"                     : "MIT"
-    , "repository": {
-          "url"                     : "https://github.com/eventEmitter/related-eventlog.git"
-        , "type"                    : "git"
-    }
-    , "engines": {
-        "node"                      : ">=v5"
-    }
-    , "bugs": {
-        "url"                       : "https://github.com/eventEmitter/related-eventlog/issues"
-    }
-    , "dependencies": {
-          "ee-types"                : "2.x"
-        , "related-extension"       : "^1.1.x"
-        , "ee-event-emitter"        : "0.3.x"
-        , "ee-log"                  : "0.3.x"
-    }
-    , "devDependencies": {
-          "mocha"                   : "2.x"
-        , "related"                 : "^2.6.x"
-        , "related-query-context"   : "2.x"
-    }
-    , "peerDependencies": {
-          "related"                 : "2.x"
-    }
-    , "optionalDependencies": {}
-    , "keywords"                    : ["related", "orm", "extension", "eventlog", "soft-delete"]
-    , "scripts": {
-        "test"                      : "./node_modules/mocha/bin/mocha --reporter spec --bail"
+    "name": "related-eventlog",
+    "description": "logs inserts, updates and deletes on entites and relations that need to be monitored",
+    "version": "1.0.1",
+    "homepage": "https://github.com/eventEmitter/related-eventlog",
+    "author": "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)",
+    "license": "MIT",
+    "repository": {
+        "url": "https://github.com/eventEmitter/related-eventlog.git",
+        "type": "git"
+    },
+    "engines": {
+        "node": ">=v5"
+    },
+    "bugs": {
+        "url": "https://github.com/eventEmitter/related-eventlog/issues"
+    },
+    "dependencies": {
+        "ee-event-emitter": "^0.3.1",
+        "ee-log": "^3.0.5",
+        "ee-types": "^2.1.4",
+        "related-extension": "^1.1.0"
+    },
+    "devDependencies": {
+        "mocha": "2.x",
+        "related": "^2.x",
+        "related-query-context": "2.x"
+    },
+    "optionalDependencies": {},
+    "keywords": [
+        "related",
+        "orm",
+        "extension",
+        "eventlog",
+        "soft-delete"
+    ],
+    "scripts": {
+        "test": "./node_modules/.bin/mocha --reporter spec --bail"
     }
 }
